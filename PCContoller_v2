@@ -12,13 +12,13 @@ public class PCContoller_v2 : MonoBehaviour
     private PlayerActionControls inputAction;
     //Move Input from user
     private Vector2 keyboardInput;
-	private void Awake()
+	private void Awake() 
     {
         //ctx = context
         inputAction = new PlayerActionControls();
         //When move key/s pressed change character/player's velocity
-        inputAction.Player.Move.performed +=
-        ctx => moveVelocity =
+        inputAction.Player.Move.performed += 
+        ctx => moveVelocity = 
         ctx.ReadValue<Vector2>();
     }
     private void OnEnable()
@@ -37,11 +37,11 @@ public class PCContoller_v2 : MonoBehaviour
     }
     private void GetUserInput()
     {
-        inputAction.Player.Move.performed +=
-        ctx => moveVelocity =
+        inputAction.Player.Move.performed += 
+        ctx => moveVelocity = 
         ctx.ReadValue<Vector2>();
 
-        float x = moveVelocity.x;
+        float x = moveVelocity.x;   
         float y = moveVelocity.y;
 
         var userControlsInput = new Vector3(x, y, 0);
